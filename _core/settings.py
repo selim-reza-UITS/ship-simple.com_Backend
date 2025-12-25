@@ -28,8 +28,14 @@ SECRET_KEY = "django-insecure-47g^$d&l+pc5=&o)2_puutt2i!7xn=2dza(01e74cf3dapllkk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
-
+PROD_ALLOWED_HOSTS = ["ship-simple.com", "api.ship-simple.com", "www.ship-simple.com"]
+LOCAL_ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = LOCAL_ALLOWED_HOSTS
+CSRF_TRUSTED_ORIGINS = [
+    "https://ship-simple.com",
+    "https://api.ship-simple.com",
+    "https://www.ship-simple.com",
+]
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 # Application definition
